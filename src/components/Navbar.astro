@@ -44,11 +44,11 @@ import { SITE_TITLE } from "../consts";
   let lastScrollY = window.scrollY;
   const navbar = document.getElementById("navbar");
 
-  // 监听滚动事件
+  // Listening for scroll events
   window.addEventListener("scroll", () => {
     if (navbar) {
       if (window.scrollY > lastScrollY && window.scrollY > 50) {
-        // 向下滚动，隐藏导航栏
+        // Scroll down to hide the navigation bar
         navbar.classList.add("-translate-y-full");
         navbar.classList.remove("translate-y-0");
         const dropdown = document.getElementById("dropdown");
@@ -56,7 +56,7 @@ import { SITE_TITLE } from "../consts";
           dropdown.removeAttribute("open");
         }
       } else if (window.scrollY < lastScrollY) {
-        // 向上滚动，显示导航栏
+        // Scroll up to show the navigation bar
         navbar.classList.remove("-translate-y-full");
         navbar.classList.add("translate-y-0");
       }
@@ -64,7 +64,6 @@ import { SITE_TITLE } from "../consts";
     }
   });
 
-  // 当用户点击菜单区域外部区域时, 关闭菜单
   document.addEventListener("click", function (event) {
     const dropdown = document.getElementById("dropdown");
     if (dropdown) {
@@ -76,7 +75,6 @@ import { SITE_TITLE } from "../consts";
     }
   });
 
-  // 当用户触摸菜单区域外部区域时, 关闭菜单
   document.addEventListener("touchmove", function (event) {
     const dropdown = document.getElementById("dropdown");
     if (dropdown) {
@@ -87,7 +85,6 @@ import { SITE_TITLE } from "../consts";
     }
   });
 
-  // 当用户点击菜单的具体选项时, 关闭菜单
   document.querySelectorAll("#dropdown > ul > li").forEach((item) => {
     item.addEventListener("click", function () {
       const dropdown = document.getElementById("dropdown");
@@ -97,7 +94,6 @@ import { SITE_TITLE } from "../consts";
     });
   });
 
-  // 页面滑动时, 关闭菜单
   window.addEventListener("scroll", function () {
     const dropdown = document.getElementById("dropdown");
     if (dropdown && dropdown.hasAttribute("open")) {
@@ -105,7 +101,6 @@ import { SITE_TITLE } from "../consts";
     }
   });
 
-  // 打开菜单时, 设置 transform 为 0
   function openDropdown() {
     const dropdown = document.getElementById("dropdown");
     if (dropdown && !dropdown.hasAttribute("open")) {
