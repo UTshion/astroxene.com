@@ -24,7 +24,7 @@ export const DAISYUI_THEME = {
 export const CODE_THEME = {
   light: "github-light",
   dark: "github-dark",
-}
+} as const
 
 // Menu items for navigation
 export const menuItems = [

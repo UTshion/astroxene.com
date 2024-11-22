@@ -30,11 +30,11 @@ const { USER_SITE } = await import('./src/consts.ts');
 export default defineConfig({
   site: USER_SITE,
   output: 'static',
-  style: {
-    scss: {
-      includePaths: ["./src/styles"],
-    },
-  },
+  // style: {
+  //   scss: {
+  //     includePaths: ["./src/styles"],
+  //   },
+  // },
   integrations: [mdx(), icon(), swup({
     cache: true,
     progress: true,
@@ -51,12 +51,14 @@ export default defineConfig({
     mangle: true,
   }), sitemap(), tailwind(), pagefind(), astroI18next(), playformCompress(), react()],
   markdown: {
+    syntaxHighlight: "shiki",
     shikiConfig: {
       themes: {
         light: CODE_THEME.light,
         dark: CODE_THEME.dark,
       },
-      transformers: transformers
+      transformers: transformers,
+      wrap: true,
     },
     remarkPlugins: [remarkMath, remarkAddAnchor, remarkReadingTime],
     rehypePlugins: [rehypeKatex,

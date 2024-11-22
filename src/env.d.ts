@@ -8,3 +8,7 @@ interface ImportMetaEnv {
 interface ImportMeta {
     readonly env: ImportMetaEnv;
 }
+
+declare module 'astro-i18next' {
+    export default function astroI18next(): any;
+}
