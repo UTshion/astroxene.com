@@ -57,6 +57,7 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@rollup/plugin-terser": "^0.4.4",
     "@tailwindcss/typography": "^0.5.15",
     "@types/bun": "^1.1.13",
